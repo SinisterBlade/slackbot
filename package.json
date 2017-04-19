@@ -1,0 +1,11 @@
+{
+  "name": "slackbot",
+  "version": "1.0.0",
+  "description": "Chatbot for Slack",
+  "main": "app.js",
+  "author": "SinisterBlade",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/client": "^3.9.0"
+  }
+}
