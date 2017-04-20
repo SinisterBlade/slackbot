@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Chatbot for Slack",
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "author": "SinisterBlade",
   "license": "MIT",
   "dependencies": {
