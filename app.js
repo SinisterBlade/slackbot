@@ -13,11 +13,11 @@ var bot_token = process.env.SLACK_BOT_TOKEN || '';
 var rtm = new RtmClient(bot_token);
 rtm.start();
 
+var responseObj = {}
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
-  console.log(response.context)
   conversation.message({
     input: {text: message.text},
-    context: response.context,
+    context: responseObj.context,
     workspace_id: workspace_id
   }, function(err, response) {
     if (err) {
@@ -25,6 +25,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     }
     else {
       console.log(JSON.stringify(response, null, 2))
+      responseObj = response
       rtm.sendMessage(response.output.text[0], message.channel);
     }
   })
