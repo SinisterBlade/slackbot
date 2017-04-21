@@ -17,9 +17,7 @@ var responseObj = {
   context: {}
 }
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
-  if (!responseObj.context.user) {
-    responseObj.context.user = message.user
-  }
+  responseObj.context.user = message.user
   conversation.message({
     input: {text: message.text},
     context: responseObj.context,
