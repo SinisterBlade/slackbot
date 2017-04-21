@@ -2,10 +2,10 @@ var RtmClient = require('@slack/client').RtmClient;
 var RTM_CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS.RTM;
 var RTM_EVENTS = require('@slack/client').RTM_EVENTS;
 var Conversation = require('watson-developer-cloud/conversation/v1')
-var conversation = new ConversationV1({
+var conversation = new Conversation({
   username: process.env.CONVERSATION_USERNAME || '',
   password: process.env.CONVERSATION_PASSWORD || '',
-  version_date: ConversationV1.VERSION_DATE_2017_02_03
+  version_date: Conversation.VERSION_DATE_2017_02_03
 });
 var workspace_id = process.env.CONVERSATION_WORKSPACE_ID || ''
 var bot_token = process.env.SLACK_BOT_TOKEN || '';
