@@ -14,8 +14,10 @@ var rtm = new RtmClient(bot_token);
 rtm.start();
 
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
+  console.log(response.context)
   conversation.message({
     input: {text: message.text},
+    context: response.context,
     workspace_id: workspace_id
   }, function(err, response) {
     if (err) {
