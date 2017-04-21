@@ -15,7 +15,7 @@ rtm.start();
 
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
   conversation.message({
-    input: {text: },
+    input: {text: 'Hello'},
     workspace_id: workspace_id
   }, function(err, response) {
     if (err) {
@@ -25,6 +25,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
       console.log(JSON.stringify(response))
     }
   })
+  console.log(message)
   rtm.sendMessage("Hello <@" + message.user + ">!", message.channel);
 });
 
