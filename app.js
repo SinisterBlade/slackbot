@@ -22,6 +22,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
       console.log(err)
     }
     else {
+      console.log(JSON.stringify(response, null, 2))
       rtm.sendMessage(response.output.text[0], message.channel);
     }
   })
